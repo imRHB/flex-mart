@@ -28,14 +28,9 @@
   <main class="main container-fluid">
 
     <!-- Search area -->
-    <div class="search-field">
-      <div class="search-box">
-        <input id="input-field" class="search-field" type="text" />
-        <button type="button" class="btn btn-primary search-button" data-toggle="button" aria-pressed="false"
-          autocomplete="off" id="search-btn" onclick="loadProducts()">
-          Search
-        </button>
-      </div>
+    <div class="input-group search-area" style="display: flex;">
+      <input id="input-field" type="text" class="form-control" placeholder="Search product here">
+      <button id="search-btn" class="btn btn-primary" onclick="loadProducts()">Search</button>
     </div>
 
     <hr>
@@ -46,7 +41,7 @@
           <!-- Product details will display here -->
         </div>
 
-        <div id="all-products" class="">
+        <div id="all-products">
           <!-- all products will display here -->
         </div>
       </div>

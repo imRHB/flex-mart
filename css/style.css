@@ -9,28 +9,17 @@ body {
 .fab {
   margin-left: 16px;
 }
-.search-field {
-  border: none;
-  border-radius: 50px;
-  padding: 5px;
-  outline: none;
+.search-area {
+  max-width: 350px;
+  margin: 30px auto;
 }
-.search-field:hover {
-  outline: none;
-  border: none;
-}
-.search-box {
-  border: 1px solid rgb(3, 118, 211);
-  width: 280px;
-  border-radius: 5px;
-  margin: auto;
-  margin-top: 50px;
+#input-field {
   border-right: none;
+  border-radius: 4px 0 0 4px;
 }
-.search-button {
-  padding: 10px 50px;
-  border-radius: 25px;
-  margin-left: 20px;
+#search-btn {
+  border-left: none;
+  border-radius: 0 4px 4px 0;
 }
 #all-products {
   display: grid;
