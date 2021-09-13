@@ -1,4 +1,11 @@
 /* 
+    Declare variable as globally
+*/
+
+const purchaseConfirmation = document.getElementById('purchase-confirmation');
+const emptyPurchase = document.getElementById('empty-purchase');
+
+/* 
     Function to fetch url and load products
 */
 
@@ -50,6 +57,8 @@ const addToCart = (id, price) => {
   updateTaxAndCharge();
   document.getElementById("total-Products").innerText = count;
   updateTotal();
+  purchaseConfirmation.style.display = 'none';
+  emptyPurchase.style.display = 'none';
 };
 
 /* 
@@ -121,6 +130,8 @@ const loadProductById = (productId) => {
   fetch(url)
     .then(res => res.json())
     .then(data => displayProductDetails(data));
+  purchaseConfirmation.style.display = 'none';
+  emptyPurchase.style.display = 'none';
 };
 
 /* 
@@ -147,4 +158,27 @@ const displayProductDetails = (product) => {
     </div>
   `;
   productDetails.appendChild(div);
+};
+
+/* 
+    Function for buy now
+*/
+
+const buyNow = () => {
+
+  if (document.getElementById('total-Products').innerText === '0') {
+    purchaseConfirmation.style.display = 'none';
+    emptyPurchase.style.display = 'block';
+    return;
+  }
+  else {
+    document.getElementById('total-Products').innerText = 0;
+    count = 0;
+    document.getElementById('price').innerText = 0;
+    document.getElementById('delivery-charge').innerText = 20;
+    document.getElementById('total-tax').innerText = 0;
+    document.getElementById('total').innerText = 0;
+    purchaseConfirmation.style.display = 'block';
+    emptyPurchase.style.display = 'none';
+  }
 };

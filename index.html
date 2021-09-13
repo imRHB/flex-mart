@@ -30,12 +30,12 @@
     <!-- Search area -->
     <div class="input-group search-area" style="display: flex;">
       <input id="input-field" type="text" class="form-control" placeholder="Search product here">
-      <button id="search-btn" class="btn btn-primary" onclick="loadProducts()">Search</button>
+      <button id="search-btn" class="btn btn-primary" onclick="searchProducts()">Search</button>
     </div>
 
     <hr>
 
-    <div class="row">
+    <div class="row" id="products-area">
       <div class="col-md-9 col-lg-9 col-sm-7">
         <div id="product-details" class="row">
           <!-- Product details will display here -->
@@ -92,8 +92,10 @@
             </tbody>
           </table>
           <div class="parces text-center">
-            <button class="btn btn-primary text-center">Buy Now</button>
+            <button onclick="buyNow()" class="btn btn-primary text-center">Buy Now</button>
           </div>
+          <h5 id="purchase-confirmation" class="text-success text-center">Thanks for shopping from FLEX MART.</h5>
+          <h5 id="empty-purchase" class="text-danger text-center">Cart is empty, add product to cart to buy.</h5>
         </div>
       </div>
     </div>
@@ -101,7 +103,6 @@
 
   <!-- Footer area start -->
   <footer class="container-fluid">
-    <hr>
     <p class="text-center"><small>Copyright &copy; FLEX MART</small></p>
   </footer>
 

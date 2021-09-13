@@ -11,7 +11,7 @@ body {
 }
 .search-area {
   max-width: 350px;
-  margin: 30px auto;
+  margin: 60px auto;
 }
 #input-field {
   border-right: none;
@@ -57,6 +57,9 @@ body {
 .cart-main {
   padding-right: 30px;
 }
+#purchase-confirmation, #empty-purchase {
+  display: none;
+}
 #product-details {
   display: none;
   margin: 0 2px 60px 2px;
@@ -75,6 +78,8 @@ body {
   margin-right: 4px;
 }
 footer {
+  margin-top: 40px;
+  padding: 30px 0;
   background-color: honeydew;
 }
 @media only screen and (max-width: 768px) {
