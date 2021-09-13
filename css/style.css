@@ -2,6 +2,13 @@ body {
   overflow-x: hidden;
   font-family: "Montserrat", sans-serif;
 }
+.shop-title {
+  font-size: 72px;
+  font-weight: 700;
+}
+.fab {
+  margin-left: 16px;
+}
 .search-field {
   border: none;
   border-radius: 50px;
@@ -14,7 +21,7 @@ body {
 }
 .search-box {
   border: 1px solid rgb(3, 118, 211);
-  width: 281px;
+  width: 280px;
   border-radius: 5px;
   margin: auto;
   margin-top: 50px;
