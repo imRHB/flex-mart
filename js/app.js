@@ -4,52 +4,13 @@
 
 const purchaseConfirmation = document.getElementById('purchase-confirmation');
 const emptyPurchase = document.getElementById('empty-purchase');
-const searchField = document.getElementById('input-field');
-
-const productsUrl = `https://fakestoreapi.com/products`;
-
-/* 
-    Function for search product
-*/
-
-const searchProducts = () => {
-  const searchText = searchField.value;
-  fetch(productsUrl)
-    .then(res => res.json())
-    .then(data => {
-      const productArray = data;
-      for (const product of productArray) {
-        if (product.title.toLowerCase().includes(searchText.toLowerCase())) {
-          const div = document.createElement("div");
-          div.classList.add("product");
-          div.innerHTML = `
-            <div class="single-product">
-              <div>
-                <img class="product-image" src=${product.image}></img>
-              </div>
-                <h3>${product.title}</h3>
-                <p>Category: ${product.category}</p>
-                <h3>Price: $${product.price}</h3>
-                <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">Add to cart</button>
-                <button onclick="loadProductById(${product.id})" id="details-btn" class="btn btn-danger">Details</button>
-                <hr>
-                <p class="reviews"><i class="fas fa-star"></i> ${product.rating.rate}</p>
-                <p class="reviews"><i class="fas fa-user"></i> ${product.rating.count} total</p>
-            </div>
-          `;
-          document.getElementById("all-products").appendChild(div);
-        }
-      }
-    });
-  console.log('not found');
-  document.getElementById('all-products').textContent = '';
-};
 
 /* 
     Function to fetch url and load products
 */
 
 const loadProducts = () => {
+  const productsUrl = `https://fakestoreapi.com/products`;
   fetch(productsUrl)
     .then((response) => response.json())
     .then((data) => showProducts(data));

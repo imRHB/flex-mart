@@ -21,6 +21,9 @@ body {
   border-left: none;
   border-radius: 0 4px 4px 0;
 }
+#products-area {
+  margin: 40px 0;
+}
 #all-products {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -36,9 +39,9 @@ body {
   transition: 0.6s;
 }
 .single-product:hover {
-  box-shadow: 4px 4px 7px gray;
-  border-radius: 10px;
-  border: 1px solid cyan;
+  box-shadow: 4px 4px 16px #ddd;
+  border-radius: 8px;
+  border: 1px solid #eee;
   background-color: whitesmoke;
 }
 .product-image {
