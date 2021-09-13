@@ -19,10 +19,9 @@ const showProducts = (products) => {
       </div>
       <h3>${product.title}</h3>
       <p>Category: ${product.category}</p>
-      <h2>Price: $ ${product.price}</h2>
-      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
-      <button id="details-btn" class="btn btn-danger">Details</button>
-      
+      <h2>Price: $${product.price}</h2>
+      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">Add to cart</button>
+      <button onclick="loadProductById(${product.id})" id="details-btn" class="btn btn-danger">Details</button>
       <hr>
       <p>Rating: ${product.rating.rate}</p>
       <p>Reviews: ${product.rating.count}</p>
@@ -84,3 +83,34 @@ const updateTotal = () => {
     getInputValue("total-tax");
   document.getElementById("total").innerText = grandTotal.toFixed(2);
 };
+
+// display product details
+
+const loadProductById = (productId) => {
+  const url = `https://fakestoreapi.com/products/${productId}`;
+  fetch(url)
+    .then(res => res.json())
+    .then(data => displayProductDetails(data));
+};
+
+const displayProductDetails = (product) => {
+  const productDetails = document.getElementById('product-details');
+  productDetails.style.display = 'block';
+  const div = document.createElement('div');
+  productDetails.textContent = '';
+  div.innerHTML = `
+    <div class="col-md-4 col-sm-6">
+      <img src="${product.image}" class="product-img-details" alt="">
+    </div>
+    <div class="col-md-8 col-sm-6">
+      <h2>${product.title}</h2>
+      <p>${product.description}</p>
+      <p>Category: ${product.category}</p>
+      <h2>Price: $${product.price}</h2>
+      <p>Rating: ${product.rating.rate}</p>
+      <p>Reviews: ${product.rating.count}</p>
+    </div>
+    <hr>
+  `;
+  productDetails.appendChild(div);
+}

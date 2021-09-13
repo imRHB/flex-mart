@@ -60,6 +60,17 @@ body {
 .cart-main {
   padding-right: 30px;
 }
+#product-details {
+  display: none;
+  margin: 0 2px 60px 2px;
+  padding-bottom: 30px;
+  border-radius: 4px;
+  box-shadow: 1px 2px 16px 8px rgba(0, 0, 0, 0.1);
+}
+.product-img-details {
+  width: 250px;
+  height: 250px;
+}
 @media only screen and (max-width: 768px) {
   #all-products {
     display: grid;
