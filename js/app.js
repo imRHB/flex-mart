@@ -38,7 +38,7 @@ const showProducts = (products) => {
           <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">Add to cart</button>
           <button onclick="loadProductById(${product.id})" id="details-btn" class="btn btn-danger">Details</button>
           <hr>
-          <p class="reviews"><i class="fas fa-star"></i> ${product.rating.rate}</p>
+          <p class="reviews"><i class="fas fa-star"></i> ${product.rating.rate} (5.0)</p>
           <p class="reviews"><i class="fas fa-user"></i> ${product.rating.count} total</p>
       </div>
     `;
@@ -152,8 +152,8 @@ const displayProductDetails = (product) => {
       <p>${product.description}</p>
       <p>Category: ${product.category}</p>
       <h2>Price: $${product.price}</h2>
-      <p>Rating: ${product.rating.rate}</p>
-      <p>Reviews: ${product.rating.count}</p>
+      <p>Rating: ${product.rating.rate} (out of 5)</p>
+      <p>Reviews: ${product.rating.count} (total review)</p>
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">Add to cart</button>
     </div>
   `;
